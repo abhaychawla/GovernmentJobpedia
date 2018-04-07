@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:elevation="2dp"
+    android:layout_margin="4dp"
+    android:layout_height="wrap_content">
+
+   <android.support.constraint.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <TextView
+           android:id="@+id/organisation_name"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="16dp"
+           android:layout_marginStart="16dp"
+           android:layout_marginTop="4dp"
+           android:textStyle="bold"
+           android:textSize="25sp"
+           android:textColor="#585ec7"
+           android:text="Organisation"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+
+       <TextView
+           android:id="@+id/position_name"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="8dp"
+           android:text="Position        :  "
+           android:textSize="15sp"
+           app:layout_constraintStart_toStartOf="@+id/organisation_name"
+           app:layout_constraintTop_toBottomOf="@+id/organisation_name" />
+
+       <TextView
+           android:id="@+id/location_name"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="4dp"
+           android:text="Location(s)   :"
+           app:layout_constraintStart_toStartOf="@+id/position_name"
+           app:layout_constraintTop_toBottomOf="@+id/position_name" />
+
+
+       <TextView
+           android:id="@+id/textView4"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="8dp"
+           android:layout_marginTop="4dp"
+           android:text="Apply by        :"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintStart_toStartOf="@+id/location_name"
+           app:layout_constraintTop_toBottomOf="@+id/location_name" />
+
+       <TextView
+           android:id="@+id/position_value_name"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="40dp"
+           android:layout_marginStart="40dp"
+           android:layout_marginTop="8dp"
+           android:text="Positonvalue"
+           android:textColor="#000"
+           android:textSize="15sp"
+           app:layout_constraintStart_toEndOf="@+id/position_name"
+           app:layout_constraintTop_toBottomOf="@+id/organisation_name" />
+
+       <TextView
+           android:id="@+id/location_value_name"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="4dp"
+           android:text="Location value"
+           android:textColor="#000"
+           android:textSize="15sp"
+           app:layout_constraintStart_toStartOf="@+id/position_value_name"
+           app:layout_constraintTop_toBottomOf="@+id/position_value_name" />
+
+       <TextView
+           android:id="@+id/date_value_name"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="8dp"
+           android:text="DateValue"
+           android:textColor="#000"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintStart_toStartOf="@+id/location_value_name" />
+   </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

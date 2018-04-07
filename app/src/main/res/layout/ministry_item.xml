@@ -9,17 +9,8 @@
     <ImageView
         android:id="@+id/image_ministry"
         android:layout_width="match_parent"
-        android:src="@mipmap/ic_launcher_round"
+        android:src="@drawable/commerce_100_100"
         android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/textView_ministry"
-        android:fontFamily="casual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="#000"
-        android:letterSpacing="2"
-        android:text="HRD" />
 
 </android.support.v7.widget.CardView>

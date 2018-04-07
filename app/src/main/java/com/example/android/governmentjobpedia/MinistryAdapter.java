@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class MinistryAdapter extends RecyclerView.Adapter<MinistryAdapter.MyViewHolder> {
 
-    ArrayList<Model> modelArrayList;
+    ArrayList<Integer> modelArrayList;
     Context context;
     ClickListener listener;
 
-    public MinistryAdapter(ArrayList<Model> modelArrayList, Context context, ClickListener listener) {
+    public MinistryAdapter(ArrayList<Integer> modelArrayList, Context context, ClickListener listener) {
         this.modelArrayList = modelArrayList;
         this.context = context;
         this.listener = listener;
@@ -26,7 +26,7 @@ public class MinistryAdapter extends RecyclerView.Adapter<MinistryAdapter.MyView
     @Override
     public MinistryAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
-                .inflate(R.layout.ministry_item, parent , false);
+                .inflate(R.layout.ministry_item, parent, false);
         final MyViewHolder holder = new MyViewHolder(view);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,14 +34,15 @@ public class MinistryAdapter extends RecyclerView.Adapter<MinistryAdapter.MyView
                 listener.onItemClick(v, holder.getAdapterPosition());
             }
         });
-        Log.d("mytag","inside oncreate view holder");
+        Log.d("mytag", "inside oncreate view holder");
         return holder;
     }
 
     @Override
     public void onBindViewHolder(MinistryAdapter.MyViewHolder holder, int position) {
-        holder.ministryName.setText(modelArrayList.get(position).ministryName);
-        Log.d("myTag", modelArrayList.get(position).ministryName);
+        //holder.ministryName.setText(modelArrayList.get(position));
+        holder.ministryImage.setImageResource(modelArrayList.get(position));
+        // Log.d("myTag", modelArrayList.get(position));
         //TODO: set glide image using list
 
     }
@@ -58,7 +59,6 @@ public class MinistryAdapter extends RecyclerView.Adapter<MinistryAdapter.MyView
         public MyViewHolder(View itemView) {
             super(itemView);
             ministryImage = itemView.findViewById(R.id.image_ministry);
-            ministryName = itemView.findViewById(R.id.textView_ministry);
         }
     }
 
