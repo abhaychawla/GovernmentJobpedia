@@ -12,7 +12,7 @@
        android:layout_width="match_parent"
        android:layout_height="match_parent">
        <TextView
-           android:id="@+id/organisation_name"
+           android:id="@+id/position_name"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginLeft="16dp"
@@ -26,68 +26,55 @@
            app:layout_constraintTop_toTopOf="parent" />
 
        <TextView
-           android:id="@+id/position_name"
+           android:id="@+id/location_label"
            android:layout_width="0dp"
            android:layout_height="wrap_content"
            android:layout_marginTop="8dp"
-           android:text="Position        :  "
-           android:textSize="15sp"
-           app:layout_constraintStart_toStartOf="@+id/organisation_name"
-           app:layout_constraintTop_toBottomOf="@+id/organisation_name" />
-
-       <TextView
-           android:id="@+id/location_name"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="4dp"
            android:text="Location(s)   :"
+           android:textSize="15sp"
            app:layout_constraintStart_toStartOf="@+id/position_name"
            app:layout_constraintTop_toBottomOf="@+id/position_name" />
 
-
        <TextView
-           android:id="@+id/textView4"
+           android:id="@+id/apply_by_label"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginBottom="8dp"
            android:layout_marginTop="4dp"
-           android:text="Apply by        :"
+           android:text="Apply by          :"
            app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintStart_toStartOf="@+id/location_name"
-           app:layout_constraintTop_toBottomOf="@+id/location_name" />
+           app:layout_constraintStart_toStartOf="@+id/location_label"
+           app:layout_constraintTop_toBottomOf="@+id/location_label" />
 
-       <TextView
-           android:id="@+id/position_value_name"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginLeft="40dp"
-           android:layout_marginStart="40dp"
-           android:layout_marginTop="8dp"
-           android:text="Positonvalue"
-           android:textColor="#000"
-           android:textSize="15sp"
-           app:layout_constraintStart_toEndOf="@+id/position_name"
-           app:layout_constraintTop_toBottomOf="@+id/organisation_name" />
+
+
 
        <TextView
            android:id="@+id/location_value_name"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_marginTop="4dp"
+           android:layout_marginLeft="40dp"
+           android:layout_marginStart="40dp"
+           android:layout_marginTop="8dp"
            android:text="Location value"
            android:textColor="#000"
            android:textSize="15sp"
-           app:layout_constraintStart_toStartOf="@+id/position_value_name"
-           app:layout_constraintTop_toBottomOf="@+id/position_value_name" />
+           app:layout_constraintStart_toEndOf="@+id/location_label"
+           app:layout_constraintTop_toBottomOf="@+id/position_name" />
 
        <TextView
-           android:id="@+id/date_value_name"
+           android:id="@+id/apply_value_name"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginBottom="8dp"
-           android:text="DateValue"
+           android:layout_marginTop="4dp"
+           android:text="Apply value"
            android:textColor="#000"
+           android:textSize="15sp"
            app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintStart_toStartOf="@+id/location_value_name" />
+           app:layout_constraintStart_toStartOf="@+id/location_value_name"
+           app:layout_constraintTop_toBottomOf="@+id/location_value_name" />
+
+
    </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

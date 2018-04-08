@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MinistryListAdapter extends RecyclerView.Adapter<MinistryListAdapter.MyViewHolder> {
 
@@ -45,10 +46,9 @@ public class MinistryListAdapter extends RecyclerView.Adapter<MinistryListAdapte
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.organisationName.setText(modelArrayList.get(position).organisation);
         holder.positionValue.setText(modelArrayList.get(position).position);
         holder.locationName.setText(modelArrayList.get(position).location);
-        holder.dateName.setText(modelArrayList.get(position).applyBy);
+        holder.applyName.setText(modelArrayList.get(position).applyBy);
     }
 
     @Override
@@ -57,20 +57,16 @@ public class MinistryListAdapter extends RecyclerView.Adapter<MinistryListAdapte
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.organisation_name)
-        TextView organisationName;
 
-        @BindView(R.id.position_value_name)
         TextView positionValue;
-
-        @BindView(R.id.location_value_name)
         TextView locationName;
-
-        @BindView(R.id.date_value_name)
-        TextView dateName;
+        TextView applyName;
 
         public MyViewHolder(View itemView) {
             super(itemView);
+            positionValue = itemView.findViewById(R.id.position_name);
+            locationName = itemView.findViewById(R.id.location_value_name);
+            applyName = itemView.findViewById(R.id.apply_value_name);
         }
     }
 }
