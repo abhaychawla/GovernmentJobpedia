@@ -25,8 +25,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="203dp"
-        android:scaleType="fitStart"
+        android:layout_height="201dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/logo_with_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,9 +38,10 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_gravity="bottom"
+        android:layout_marginBottom="64dp"
         app:layout_anchorGravity="bottom"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="317dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button"
@@ -63,16 +64,19 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:text="TextView"
+        android:layout_marginStart="5dp"
+        android:text="JOBS IN DIFFERENT MINISTRIES"
+        android:textColor="@color/secondary_text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="288dp" />
+        app:layout_constraintStart_toStartOf="@+id/include" />
 
 
 </android.support.constraint.ConstraintLayout>

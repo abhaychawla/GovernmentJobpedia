@@ -8,14 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +32,7 @@ public class MinistryJobActivity extends AppCompatActivity {
     ArrayList<Model> modelList;
     final String url = "http://192.168.1.101:8081/api/jobs";
     String tag_json_obj = "myTag";
+    TextView minName;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,6 +43,11 @@ public class MinistryJobActivity extends AppCompatActivity {
         jobList.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         jobList.setLayoutManager(mLayoutManager);
+        Intent intent = getIntent();
+        int ministry = intent.getIntExtra("myTag", 0);
+        minName = findViewById(R.id.ministry_name_clicked);
+        String ministryName = getMinistryName(ministry);
+        minName.setText(ministryName);
         modelList = new ArrayList<>();
         ministryAdapter = new MinistryListAdapter(this, modelList, new MinistryListAdapter.ClickListener() {
             @Override
@@ -53,6 +61,23 @@ public class MinistryJobActivity extends AppCompatActivity {
 
         jobList.setAdapter(ministryAdapter);
         createDataInformation();
+    }
+
+    private String getMinistryName(int min) {
+        switch (min) {
+            case 0:
+                return "MINISTRY OF TEXTILES";
+            case 1:
+                return "MINISTRY OF POWER";
+            case 2:
+                return "MINISTRY OF COAL";
+            case 3:
+                return "MINISTRY OF COMMERCE AND INDUSTRY";
+            case 4:
+                return "MINISTRY OF HOME AFFAIRS";
+            default:
+                return "ALL JOB OFFERS";
+        }
     }
 
     private void createDataInformation() {
@@ -97,5 +122,16 @@ public class MinistryJobActivity extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(jsonArrayRequest, tag_json_obj);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.list_menu_file, menu);
+        return true;
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 }
