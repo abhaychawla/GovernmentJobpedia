@@ -1,0 +1,61 @@
+<div class="container mt-5">
+    <form ng-submit="vm.postJob()">
+        <br>
+        <br>
+        <br>
+        <div class="form-group row">
+            <label for="ministryName" class="col-sm-2 col-form-label">Ministry Name</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="ministryName" ng-model="vm.job.ministryName" placeholder="Ministry Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="orgName" class="col-sm-2 col-form-label">Organisation Name</label>
+            <div class="col-sm-10">
+            <input type="orgName" class="form-control" id="orgName" ng-model="vm.job.orgName" placeholder="Organisation Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="position" class="col-sm-2 col-form-label">Position</label>
+            <div class="col-sm-10">
+            <input type="position" class="form-control" id="position" ng-model="vm.job.position" placeholder="Position">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="startDate" class="col-sm-2 col-form-label">Start Date</label>
+            <div class="col-sm-10">
+            <input type="startDate" class="form-control" id="startDate" ng-model="vm.job.startDate" placeholder="Start Date">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="endDate" class="col-sm-2 col-form-label">Apply By</label>
+            <div class="col-sm-10">
+            <input type="endDate" class="form-control" id="endDate" ng-model="vm.job.applyBy" placeholder="Apply By">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="location" class="col-sm-2 col-form-label">Location</label>
+            <div class="col-sm-10">
+            <input type="location" class="form-control" id="location" ng-model="vm.job.location" placeholder="Location">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="description" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+            <textarea type="description" class="form-control" id="description" ng-model="vm.job.description" placeholder="Description"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="eligibility" class="col-sm-2 col-form-label">Eligibility</label>
+            <div class="col-sm-10">
+            <textarea type="eligibility" class="form-control" id="eligibility" ng-model="vm.job.eligibility" placeholder="Eligibility"></textarea>
+            </div>
+        </div>
+        <br>
+        <div class="form-group row">
+            <div class="col-sm-12">
+            <button type="submit" class="form-control btn btn-primary">Post Job</button>
+            </div>
+        </div>
+    </form>
+</div>
