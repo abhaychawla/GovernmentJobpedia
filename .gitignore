@@ -31,3 +31,9 @@ build/
 
 #NDK
 obj/
+
+# Modules
+AdminPortal/node_modules/
+
+# Configuration
+AdminPortal/.env
